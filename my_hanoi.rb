@@ -46,6 +46,7 @@ class Hanoi
 	end
 
 	def play
+		status
 		while @second != @goal && @third != @goal
 			move
 		end
@@ -53,7 +54,6 @@ class Hanoi
 	end
 
 	def move
-		status
 		select_choice = select
 		dest(select_choice)
 		status
@@ -77,7 +77,7 @@ class Hanoi
 	end
 
 	def dest(select_choice)
-		puts "Select a Pile (1, 2, 3) to put down the disk:"
+		puts "Selected: #{select_choice} \nSelect a Pile (1, 2, 3) to put down the disk:"
 		dest_choice = gets.chomp
 		case dest_choice
 		when "1"
@@ -98,7 +98,9 @@ class Hanoi
 
 end
 
-my_hanoi = Hanoi.new(3)
+puts "Select Difficulty Level (>= 3): "
+level = gets.chomp.to_i
+my_hanoi = Hanoi.new(level)
 my_hanoi.play
 
 
