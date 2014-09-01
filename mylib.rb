@@ -37,7 +37,7 @@ module MyLib
 end
 
 
-# CodeEval Standard
+# CodeEval Standard Input
 file_name = ARGV.first.chomp
 
 File.readlines(file_name).each do |line|
